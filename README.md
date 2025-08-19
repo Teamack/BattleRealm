@@ -67,6 +67,15 @@ Build a deck of powerful cards — from dragons and demons to spells and relics 
 
 ---
 
+## 🔐 Environment Variables
+
+- Copy `.env.example` to `.env` and fill in your values.
+- Only variables prefixed with `VITE_` are exposed to client code.
+- Keep secrets unprefixed and out of the repository.
+- Run `npm run check-env` to warn about any unprefixed variables referenced in `src/`.
+
+---
+
 ## 🌍 Deployment
 
 This repo is configured for GitHub Pages. Push to main and the site auto-deploys.

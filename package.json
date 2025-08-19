@@ -5,9 +5,10 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "npm run check-env && vite build",
     "preview": "vite preview --strictPort --port 4321",
-    "test": "echo 'no tests'"
+    "test": "echo 'no tests'",
+    "check-env": "node scripts/check-env.mjs"
   },
   "devDependencies": {
     "vite": "^5.0.0"

@@ -1,7 +1,3 @@
 export { basicCreatures } from './basic-creatures';
 export { advancedCreatures } from './advanced-creatures';
-
-export default {
-  basicCreatures,
-  advancedCreatures,
-};
+export { default } from './advanced-creatures';

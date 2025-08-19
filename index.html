@@ -1,12 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Battle Realm</title>
-  </head>
-  <body>
-    <div id="app"></div>
-    <script type="module" src="/src/main.ts"></script>
-  </body>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Battle Realm</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" type="image/png" href="favicon.png" />
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <h1>🃏 Battle Realm</h1>
+    <p class="tagline">Build decks. Command creatures. Dominate the realm.</p>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#cards">Cards</a>
+      <a href="#rules">Rules</a>
+      <a href="#play">Play</a>
+    </nav>
+  </header>
+
+  <!-- Hero Banner -->
+  <section id="hero">
+    <div class="hero-text">
+      <h2>Enter the Realm</h2>
+      <p>Collect creatures, wield spells, and master the battlefield.</p>
+      <a href="#cards" class="btn">Explore Cards</a>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about">
+    <h2>About the Game</h2>
+    <p>
+      <strong>Battle Realm</strong> is a fantasy trading card game where players
+      summon creatures, cast spells, and equip relics in an all-out fight to
+      reduce their opponent’s health to zero.
+    </p>
+  </section>
+
+  <!-- Card Preview -->
+  <section id="cards">
+    <h2>Sample Card</h2>
+    <div class="card-preview">
+      <div class="card">
+        <div class="card-header">
+          <span class="card-title">Soldier ✦</span>
+          <span class="essence">⚔ Valor</span>
+        </div>
+        <div class="card-art">
+          <img src="soldier.png" alt="The Soldier Card" />
+        </div>
+        <div class="card-stats">
+          <span>⚔ 2</span>
+          <span>🛡 2</span>
+          <span>💠 1</span>
+        </div>
+        <div class="card-text">
+          <strong>Formation Bond (🛡):</strong>
+          <p>
+            When Soldier enters the battlefield, if another Warrior is on the
+            field, both gain +1 Defense until end of turn.
+          </p>
+          <em>“One blade does not win wars. One shield does not hold a wall. But together—together, we endure.”</em>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Rules -->
+  <section id="rules">
+    <h2>Basic Rules</h2>
+    <ul>
+      <li>Each player starts with a deck and health points.</li>
+      <li>Take turns drawing and playing cards.</li>
+      <li>Use creatures, spells, equipment, and locations strategically.</li>
+      <li>The goal: reduce your opponent’s health to zero.</li>
+    </ul>
+  </section>
+
+  <!-- Call to Action -->
+  <section id="play">
+    <h2>Play Battle Realm</h2>
+    <p>
+      The game is currently in development. Watch this space for print-and-play
+      decks and online playtest links!
+    </p>
+    <a href="https://github.com/<your-username>/Battle-Realm" class="btn">View on GitHub</a>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Battle Realm. Licensed under CC BY-NC-SA 4.0.</p>
+  </footer>
+</body>
 </html>

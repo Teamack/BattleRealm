@@ -5,3 +5,5 @@ export { godTierSpells } from './god-tier-spells';
 export { basicEquipment } from './basic-equipment';
 export { advancedEquipment } from './advanced-equipment';
 export { godTierEquipment } from './god-tier-equipment';
+export { default } from './advanced-creatures';
+

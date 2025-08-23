@@ -4,11 +4,20 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "check-env": "node scripts/check-env.mjs",
+    "predev": "npm run check-env",
     "dev": "vite",
+    "prebuild": "npm run check-env",
     "build": "vite build",
     "preview": "vite preview --strictPort --port 4321",
     "test": "echo 'no tests'",
-    "deploy": "npm run build && node scripts/check-dist.js"
+    "deploy": "npm run build && node scripts/check-dist.js",
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "jsonwebtoken": "^9.0.2"
   },
   "devDependencies": {
     "vite": "^5.0.0",

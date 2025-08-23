@@ -83,6 +83,21 @@ Live site: https://<your-username>.github.io/Battle-Realm
 
 ---
 
+## 🔒 Content Security Policy
+
+Scripts are restricted to trusted sources using a Content Security Policy defined in `index.html`:
+
+```html
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'" />
+```
+
+- Only scripts loaded from the same origin are permitted.
+- Inline scripts and the use of `eval` are blocked.
+
+If your changes require scripts from another domain, update the `script-src` directive and note the exception here for future contributors.
+
+---
+
 ## 📜 License
 
 This project is licensed under CC BY-NC-SA 4.0.

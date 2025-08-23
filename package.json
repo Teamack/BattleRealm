@@ -4,11 +4,13 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "check-env": "node scripts/check-env.mjs",
+    "predev": "npm run check-env",
     "dev": "vite",
-    "build": "npm run check-env && vite build",
+    "prebuild": "npm run check-env",
+    "build": "vite build",
     "preview": "vite preview --strictPort --port 4321",
-    "test": "echo 'no tests'",
-    "check-env": "node scripts/check-env.mjs"
+    "test": "echo 'no tests'"
   },
   "devDependencies": {
     "vite": "^5.0.0"

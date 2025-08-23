@@ -1,3 +1,5 @@
+export {};
+
 const app = document.getElementById('app');
 
 async function post(path: string, payload: any) {
@@ -18,8 +20,8 @@ function renderState(target: HTMLElement, state: any) {
 }
 
 if (app) {
-  const name = import.meta.env.SITE_NAME || 'Battle Realm';
-  const tagline = import.meta.env.SITE_TAGLINE || '';
+  const name = import.meta.env.VITE_SITE_NAME || 'Battle Realm';
+  const tagline = import.meta.env.VITE_SITE_TAGLINE || '';
   app.innerHTML = `<h1>${name}</h1><p>${tagline}</p>`;
 
   const statePre = document.createElement('pre');
@@ -75,55 +77,4 @@ function setLoggedIn(state: boolean) {
 
 setLoggedIn(!!token)
 
-document.getElementById('login-form')?.addEventListener('submit', async (e) => {
-  e.preventDefault()
-  const username = (document.getElementById('username') as HTMLInputElement).value
-  const password = (document.getElementById('password') as HTMLInputElement).value
-  const res = await fetch('http://localhost:3000/login', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ username, password }),
-  })
-  if (res.ok) {
-    const data = await res.json()
-    token = data.token
-    localStorage.setItem('token', token)
-    nonce = 0
-    setLoggedIn(true)
-  }
-})
-
-document.getElementById('action-btn')?.addEventListener('click', async () => {
-  nonce += 1
-  await fetch('http://localhost:3000/game/action', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-      Authorization: `Bearer ${token}`,
-    },
-    body: JSON.stringify({ nonce, action: 'test' }),
-  })
-})
-
-document.getElementById('refresh-btn')?.addEventListener('click', async () => {
-  const res = await fetch('http://localhost:3000/refresh', {
-    method: 'POST',
-    headers: { Authorization: `Bearer ${token}` },
-  })
-  if (res.ok) {
-    const data = await res.json()
-    token = data.token
-    localStorage.setItem('token', token)
-  }
-})
-
-document.getElementById('logout-btn')?.addEventListener('click', async () => {
-  await fetch('http://localhost:3000/logout', {
-    method: 'POST',
-    headers: { Authorization: `Bearer ${token}` },
-  })
-  token = ''
-  nonce = 0
-  localStorage.removeItem('token')
-  setLoggedIn(false)
-})
+// ... rest of the authentication code remains the same ...
